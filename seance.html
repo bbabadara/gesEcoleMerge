@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Navebar -->
+    <nav
+      class="top-0 z-0 w-75 bg-indigo-800 border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700"
+    >
+      <div class="px-3 py-3 lg:px-5 lg:pl-3">
+        <div class="flex items-center justify-end">
+          <div class="flex items-center">
+            <div class="flex items-center ms-3">
+              <div>
+                <button
+                  type="button"
+                  class="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
+                  aria-expanded="false"
+                  data-dropdown-toggle="dropdown-user"
+                >
+                  <span class="sr-only">Open user menu</span>
+                  <img
+                    class="w-8 h-8 rounded-full"
+                    src="images/student.jpeg"
+                    alt="user photo"
+                  />
+                </button>
+              </div>
+              <div
+                class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded shadow dark:bg-gray-700 dark:divide-gray-600"
+                id="dropdown-user"
+              >
+                <div
+                  class="px-4 py-3 text-sm font-medium text-gray-900 dark:text-white"
+                >
+                  <p>Badara BA</p>
+                  <p>Matricule: etu001221</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- sidebar -->
+    <aside
+      id="logo-sidebar"
+      class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0"
+      aria-label="Sidebar"
+    >
+      <div
+        class="h-full flex flex-col items-stretch px-3 py-4 overflow-y-auto bg-indigo-800 dark:bg-gray-800"
+      >
+        <a href="#" class="flex ms-2 md:me-24">
+          <img src="images/logo.png" class="h-8 me-3" alt="FlowBite Logo" />
+          <span
+            class="self-center text-xl text-white font-semibold sm:text-2xl whitespace-nowrap dark:text-white"
+            >Ecole 221</span
+          >
+        </a>
+        <div class="mt-3 h-5/6">
+          <ul class="space-y-2 font-medium">
+            <li class="text-white hover:text-indigo-800">
+              <a
+                href="listecours.html"
+                class="flex items-center p-2 rounded-lg dark:text-white hover:bg-white dark:hover:bg-blue-700 group"
+              >
+                <svg
+                  class="w-6 h-6"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M11 9h6m-6 3h6m-6 3h6M6.996 9h.01m-.01 3h.01m-.01 3h.01M4 5h16a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Z"
+                  />
+                </svg>
+                <span class="flex-1 ms-3 whitespace-nowrap">Mes cours</span>
+              </a>
+            </li>
+            <li class="text-white hover:text-indigo-800">
+              <a
+                href="absence.html"
+                class="flex items-center p-2 rounded-lg dark:text-white hover:bg-white dark:hover:bg-blue-700 group"
+              >
+                <svg
+                  class="w-6 h-6"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-width="2"
+                    d="m6 6 12 12m3-6a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                  />
+                </svg>
+                <span class="flex-1 ms-3 whitespace-nowrap">Mes absences</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="flex items-center justify-center mt-10">
+          <a href="connexion.html" class="w-full">
+            <button
+              class="flex items-center justify-center font-medium bg-gray-200 w-full py-2 rounded-lg hover:bg-white"
+            >
+              <svg
+                class="w-5 h-5 text-gray-800 me-1 dark:text-white rotate-180"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M20 12H8m12 0-4 4m4-4-4-4M9 4H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h2"
+                />
+              </svg>
+              <span class="ms-1"> Se déconnecter </span>
+            </button>
+          </a>
+        </div>
+      </div>
+    </aside>
+
+    <div class="p-4 sm:ml-64">
+      <div
+        class="p-4   rounded-lg dark:border-gray-700"
+      >
+        <div class="flex items-center text-xl">
+          <p class="font-medium">
+            Liste des seances du cours de
+            <span class="text-2xl">Programmation</span>
+          </p>
+        </div>
+
+        <!-- container des seances -->
+        <div class="flex flex-wrap justify-between w-full">
+          <!-- une seance -->
+          <div class="w-full sm:w-1/2 md:w-1/3 p-2">
+            <div class="max-w-sm rounded-lg border shadow-sm p-4 flex items-start bg-white dark:bg-gray-800 dark:border-gray-700">
+              <div class="w-2 bg-purple-600 rounded-l-lg"></div>
+              <div class="pl-4">
+                <h3 class="text-lg font-semibold text-gray-800 dark:text-white">Programmation</h3>
+                <p class="text-sm text-gray-500 dark:text-gray-400">Algorithme</p>
+                <div class="mt-4 space-y-2">
+                  <!-- Date -->
+                  <div class="flex items-center text-sm text-gray-500 dark:text-gray-400">
+                    <span class="material-icons text-red-400 mr-2">event</span>
+                    17 Dec. 2024
+                  </div>
+                  <div class="flex items-center text-sm text-gray-500 dark:text-gray-400">
+                    <span class="material-icons text-yellow-400 mr-2">schedule</span>
+                    09.00 - 10.00 AM
+                  </div>
+                  <div class="flex items-center text-sm text-gray-500 dark:text-gray-400">
+                    <span class="material-icons text-orange-400 mr-2">person</span>
+                    M. Wane
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          <!-- une seance -->
+          <div class="w-full sm:w-1/2 md:w-1/3 p-2">
+            <div class="max-w-sm rounded-lg border shadow-sm p-4 flex items-start bg-white dark:bg-gray-800 dark:border-gray-700">
+              <div class="w-2 bg-purple-600 rounded-l-lg"></div>
+              <div class="pl-4">
+                <h3 class="text-lg font-semibold text-gray-800 dark:text-white">Programmation</h3>
+                <p class="text-sm text-gray-500 dark:text-gray-400">Algorithme</p>
+                <div class="mt-4 space-y-2">
+                  <!-- Date -->
+                  <div class="flex items-center text-sm text-gray-500 dark:text-gray-400">
+                    <span class="material-icons text-red-400 mr-2">event</span>
+                    17 Dec. 2024
+                  </div>
+                  <div class="flex items-center text-sm text-gray-500 dark:text-gray-400">
+                    <span class="material-icons text-yellow-400 mr-2">schedule</span>
+                    09.00 - 10.00 AM
+                  </div>
+                  <div class="flex items-center text-sm text-gray-500 dark:text-gray-400">
+                    <span class="material-icons text-orange-400 mr-2">person</span>
+                    M. Wane
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          <!-- une seance -->
+          <div class="w-full sm:w-1/2 md:w-1/3 p-2">
+            <div class="max-w-sm rounded-lg border shadow-sm p-4 flex items-start bg-white dark:bg-gray-800 dark:border-gray-700">
+              <div class="w-2 bg-purple-600 rounded-l-lg"></div>
+              <div class="pl-4">
+                <h3 class="text-lg font-semibold text-gray-800 dark:text-white">Programmation</h3>
+                <p class="text-sm text-gray-500 dark:text-gray-400">Algorithme</p>
+                <div class="mt-4 space-y-2">
+                  <!-- Date -->
+                  <div class="flex items-center text-sm text-gray-500 dark:text-gray-400">
+                    <span class="material-icons text-red-400 mr-2">event</span>
+                    17 Dec. 2024
+                  </div>
+                  <div class="flex items-center text-sm text-gray-500 dark:text-gray-400">
+                    <span class="material-icons text-yellow-400 mr-2">schedule</span>
+                    09.00 - 10.00 AM
+                  </div>
+                  <div class="flex items-center text-sm text-gray-500 dark:text-gray-400">
+                    <span class="material-icons text-orange-400 mr-2">person</span>
+                    M. Wane
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          <!-- une seance -->
+          <div class="w-full sm:w-1/2 md:w-1/3 p-2">
+            <div class="max-w-sm rounded-lg border shadow-sm p-4 flex items-start bg-white dark:bg-gray-800 dark:border-gray-700">
+              <div class="w-2 bg-purple-600 rounded-l-lg"></div>
+              <div class="pl-4">
+                <h3 class="text-lg font-semibold text-gray-800 dark:text-white">Programmation</h3>
+                <p class="text-sm text-gray-500 dark:text-gray-400">Algorithme</p>
+                <div class="mt-4 space-y-2">
+                  <!-- Date -->
+                  <div class="flex items-center text-sm text-gray-500 dark:text-gray-400">
+                    <span class="material-icons text-red-400 mr-2">event</span>
+                    17 Dec. 2024
+                  </div>
+                  <div class="flex items-center text-sm text-gray-500 dark:text-gray-400">
+                    <span class="material-icons text-yellow-400 mr-2">schedule</span>
+                    09.00 - 10.00 AM
+                  </div>
+                  <div class="flex items-center text-sm text-gray-500 dark:text-gray-400">
+                    <span class="material-icons text-orange-400 mr-2">person</span>
+                    M. Wane
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- une seance -->
+          <div class="w-full sm:w-1/2 md:w-1/3 p-2">
+            <div class="max-w-sm rounded-lg border shadow-sm p-4 flex items-start bg-white dark:bg-gray-800 dark:border-gray-700">
+              <div class="w-2 bg-purple-600 rounded-l-lg"></div>
+              <div class="pl-4">
+                <h3 class="text-lg font-semibold text-gray-800 dark:text-white">Programmation</h3>
+                <p class="text-sm text-gray-500 dark:text-gray-400">Algorithme</p>
+                <div class="mt-4 space-y-2">
+                  <!-- Date -->
+                  <div class="flex items-center text-sm text-gray-500 dark:text-gray-400">
+                    <span class="material-icons text-red-400 mr-2">event</span>
+                    17 Dec. 2024
+                  </div>
+                  <div class="flex items-center text-sm text-gray-500 dark:text-gray-400">
+                    <span class="material-icons text-yellow-400 mr-2">schedule</span>
+                    09.00 - 10.00 AM
+                  </div>
+                  <div class="flex items-center text-sm text-gray-500 dark:text-gray-400">
+                    <span class="material-icons text-orange-400 mr-2">person</span>
+                    M. Wane
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          <!-- une seance -->
+          <div class="w-full sm:w-1/2 md:w-1/3 p-2">
+            <div class="max-w-sm rounded-lg border shadow-sm p-4 flex items-start bg-white dark:bg-gray-800 dark:border-gray-700">
+              <div class="w-2 bg-purple-600 rounded-l-lg"></div>
+              <div class="pl-4">
+                <h3 class="text-lg font-semibold text-gray-800 dark:text-white">Programmation</h3>
+                <p class="text-sm text-gray-500 dark:text-gray-400">Algorithme</p>
+                <div class="mt-4 space-y-2">
+                  <!-- Date -->
+                  <div class="flex items-center text-sm text-gray-500 dark:text-gray-400">
+                    <span class="material-icons text-red-400 mr-2">event</span>
+                    17 Dec. 2024
+                  </div>
+                  <div class="flex items-center text-sm text-gray-500 dark:text-gray-400">
+                    <span class="material-icons text-yellow-400 mr-2">schedule</span>
+                    09.00 - 10.00 AM
+                  </div>
+                  <div class="flex items-center text-sm text-gray-500 dark:text-gray-400">
+                    <span class="material-icons text-orange-400 mr-2">person</span>
+                    M. Wane
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          <!-- une seance -->
+          <div class="w-full sm:w-1/2 md:w-1/3 p-2">
+            <div class="max-w-sm rounded-lg border shadow-sm p-4 flex items-start bg-white dark:bg-gray-800 dark:border-gray-700">
+              <div class="w-2 bg-purple-600 rounded-l-lg"></div>
+              <div class="pl-4">
+                <h3 class="text-lg font-semibold text-gray-800 dark:text-white">Programmation</h3>
+                <p class="text-sm text-gray-500 dark:text-gray-400">Algorithme</p>
+                <div class="mt-4 space-y-2">
+                  <!-- Date -->
+                  <div class="flex items-center text-sm text-gray-500 dark:text-gray-400">
+                    <span class="material-icons text-red-400 mr-2">event</span>
+                    17 Dec. 2024
+                  </div>
+                  <div class="flex items-center text-sm text-gray-500 dark:text-gray-400">
+                    <span class="material-icons text-yellow-400 mr-2">schedule</span>
+                    09.00 - 10.00 AM
+                  </div>
+                  <div class="flex items-center text-sm text-gray-500 dark:text-gray-400">
+                    <span class="material-icons text-orange-400 mr-2">person</span>
+                    M. Wane
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        
+        
+
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+  </body>
+</html>
