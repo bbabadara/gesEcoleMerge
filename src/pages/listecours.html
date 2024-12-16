@@ -15,10 +15,10 @@
         <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5 7h14M5 12h14M5 17h10"/>
       </svg>
     </div>
-    <div class="px-3 py-3 lg:px-5 lg:pl-3 border border-red-800 w-4/5">
-      <div class="flex items-center justify-end border border-yellow-800">
+    <div class="px-3 py-3 lg:px-5 lg:pl-3   w-4/5">
+      <div class="flex items-center justify-end ">
         <div class="flex items-center">
-            <div class="flex items-center ms-3 border border-green-800">
+            <div class="flex items-center ms-3 ">
               <div class="">
                 <button type="button" class="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" aria-expanded="false" data-dropdown-toggle="dropdown-user">
                   <span class="sr-only">Open user menu</span>
@@ -85,18 +85,34 @@
       <div class="mt-3 h-5/6">
         <ul class="space-y-2 font-medium">
           <li class="menu-item text-white hover:text-indigo-800 active:bg-white flex items-center p-2 rounded-lg dark:text-white hover:bg-white dark:hover:bg-blue-700 group">
+            <a href="listecours.html" class="flex items-center p-2 rounded-lg dark:text-white hover:bg-white dark:hover:bg-blue-700 group">
+
             <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 9h6m-6 3h6m-6 3h6M6.996 9h.01m-.01 3h.01m-.01 3h.01M4 5h16a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Z"/>
             </svg>
             <span class="menu-text flex-1 ms-3 whitespace-nowrap">Mes cours</span>
+            </a>
           </li>
           <li class="menu-item text-white hover:text-indigo-800 flex items-center p-2 rounded-lg dark:text-white hover:bg-white dark:hover:bg-blue-700 group">
+            <a href="absence.html" class="flex items-center p-2 rounded-lg dark:text-white hover:bg-white  dark:hover:bg-blue-700 group">
+
             <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
               <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="m6 6 12 12m3-6a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
             </svg>
             <span class="menu-text flex-1 ms-3 whitespace-nowrap">Mes absences</span>
+            </a>
           </li>
         </ul>
+      </div>
+      <div class="flex items-center justify-center mt-10">       
+        <a href="connexion.html" class="w-full">   
+          <button class="flex items-center justify-center font-medium bg-gray-200 w-full py-2 rounded-lg hover:bg-white">
+            <svg class="w-5 h-5 text-gray-800 me-1 dark:text-black rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H8m12 0-4 4m4-4-4-4M9 4H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h2"/>
+            </svg>          
+            <span class="ms-1 menu-text"> Se déconnecter  </span>
+          </button>
+        </a> 
       </div>
     </div>
   </aside>
@@ -138,7 +154,7 @@
                       </th>
                   </tr>
               </thead>
-              <tbody>
+              <tbody id="tbody">
                   <tr class="bg-white border dark:bg-gray-800 dark:border-gray-700">
                       <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                           Programmation
@@ -243,7 +259,7 @@
 </style>
   <script src="../js/liscours.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
-  <script src="/src/js/script.js"></script>
+  <script src="/src/js/liscours.js"></script>
   <script src="/src/js/sidebar.js"></script>
 </body>
 </html>
