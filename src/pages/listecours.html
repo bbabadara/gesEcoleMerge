@@ -37,7 +37,7 @@
     </div>
   </nav>
   
-  <aside id="logo-sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidebar">
+  <!-- <aside id="logo-sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidebar">
     <div class="h-full flex flex-col items-stretch px-3 py-4 overflow-y-auto bg-indigo-800 dark:bg-gray-800">
       <a href="listecours.html" class="flex ms-2 md:me-24">
         <img src="/src/images/logo.png" class="h-8 me-3" alt="FlowBite Logo" />
@@ -74,7 +74,33 @@
         </a> 
       </div>
     </div>
+  </aside> -->
+  <aside id="logo-sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidebar">
+    <div class="h-full flex flex-col items-stretch px-3 py-4 overflow-y-auto bg-indigo-800 dark:bg-gray-800 transition-all duration-300" id="sidebar-content">
+      <!-- Conteneur du logo et du texte -->
+      <a href="listecours.html" class="flex ms-2 md:me-24">
+        <img src="/src/images/logo.png" class="h-8 me-3 logo-only" alt="FlowBite Logo" />
+        <span class="self-center text-xl text-white font-semibold sm:text-2xl whitespace-nowrap dark:text-white logo-text">Ecole 221</span>
+      </a>
+      <div class="mt-3 h-5/6">
+        <ul class="space-y-2 font-medium">
+          <li class="menu-item text-white hover:text-indigo-800 active:bg-white flex items-center p-2 rounded-lg dark:text-white hover:bg-white dark:hover:bg-blue-700 group">
+            <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 9h6m-6 3h6m-6 3h6M6.996 9h.01m-.01 3h.01m-.01 3h.01M4 5h16a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Z"/>
+            </svg>
+            <span class="menu-text flex-1 ms-3 whitespace-nowrap">Mes cours</span>
+          </li>
+          <li class="menu-item text-white hover:text-indigo-800 flex items-center p-2 rounded-lg dark:text-white hover:bg-white dark:hover:bg-blue-700 group">
+            <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+              <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="m6 6 12 12m3-6a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
+            </svg>
+            <span class="menu-text flex-1 ms-3 whitespace-nowrap">Mes absences</span>
+          </li>
+        </ul>
+      </div>
+    </div>
   </aside>
+  
   
   <div class="p-4 sm:ml-64">
      <div class="p-4  rounded-lg dark:border-gray-700">
@@ -196,7 +222,25 @@
      </div>
   </div>
   
+<style>
+ .sidebar-collapsed {
+  width: 5.5rem; /* Réduire la largeur de la sidebar */
+}
 
+
+
+.sidebar-collapsed .logo-text {
+  display: none; /* Cacher le texte "Ecole 221" */
+}
+
+.sidebar-collapsed .menu-text {
+  display: none; /* Cacher le texte des éléments de menu */
+}
+
+.sidebar-collapsed .logo-only {
+  display: block; /* Garder seulement le logo */
+}
+</style>
   <script src="../js/liscours.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
   <script src="/src/js/script.js"></script>
