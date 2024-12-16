@@ -1,4 +1,3 @@
-alert("ok");
 // URL de l'API JSON Server
 const API_URL = "http://localhost:3000";
 
