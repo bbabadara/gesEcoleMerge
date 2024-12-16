@@ -1,29 +1,62 @@
-// URL de l'API JSON Server
-const API_URL = "http://localhost:3000";
-
-// Fonction pour charger les données des étudiants
-async function fetchEtudiants() {
+// Fonction pour récupérer la liste des cours
+async function fetchCours() {
   try {
-    // Charger les étudiants
-    const responseEtudiants = await fetch(`${API_URL}/etudiants`);
-    const etudiants = await responseEtudiants.json();
-
-    // Charger les classes pour obtenir les noms des classes
-    const responseClasses = await fetch(`${API_URL}/classes`);
-    const classes = await responseClasses.json();
-
-    // Associer les étudiants à leur classe
-    etudiants.forEach(etudiant => {
-      const classe = classes.find(c => c.id === etudiant.idClasse);
-      etudiant.nomClasse = classe ? classe.nom : "Non défini";
-    });
-
-    console.log(etudiants);
+    // Faire une requête GET à l'API JSON Server
+    const response = await fetch('http://localhost:3000/cours');
     
+    // Vérifier que la réponse est ok
+    if (!response.ok) {
+      throw new Error('Erreur lors de la récupération des données');
+    }
 
-    // Afficher les données
-    afficherEtudiants(etudiants);
+    // Convertir la réponse en JSON
+    const data = await response.json();
+    
+    // Afficher les cours sur la page
+    displayCours(data);
   } catch (error) {
-    console.error("Erreur lors du chargement des données :", error);
+    console.error('Erreur:', error);
   }
 }
+
+// Fonction pour afficher les cours sur la page (dans un tableau)
+function displayCours(cours) {
+  // Vérification que les cours existent et que le tbody est présent
+  if (!Array.isArray(cours) || cours.length === 0) {
+    console.error('Aucun cours à afficher');
+    return;
+  }
+
+  const tBody = document.querySelector('#tbody');
+  if (!tBody) {
+    console.error('Elément tbody introuvable');
+    return;
+  }
+
+  // Créer le contenu HTML pour toutes les lignes
+  const htmlContent = cours.map(cour => {
+    // Extraire les informations directement du cours
+    const idCours = cour.id;
+    const dateCours = cour.dateCours;
+    const idClasse = cour.idClasse;
+    const idSemestre = cour.idSemestre;
+    const idProfesseur = cour.idProfesseur;
+
+    return `
+      <tr>
+        <td>${idCours}</td>
+        <td>${dateCours}</td>
+        <td>${idClasse}</td>
+        <td>${idSemestre}</td>
+        <td>${idProfesseur}</td>
+      </tr>
+    `;
+  }).join('');
+
+  // Insérer le HTML généré dans le tbody
+  tBody.innerHTML = htmlContent;
+}
+
+
+// Appeler la fonction pour récupérer les cours dès que la page est chargée
+window.onload = fetchCours;
