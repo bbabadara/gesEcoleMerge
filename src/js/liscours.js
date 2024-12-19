@@ -34,24 +34,24 @@ function displayCours(cours) {
   }
 
   // Créer le contenu HTML pour toutes les lignes
-  const htmlContent = cours.map(cour => {
-    // Extraire les informations directement du cours
-    const idCours = cour.id;
-    const dateCours = cour.dateCours;
-    const idClasse = cour.idClasse;
-    const idSemestre = cour.idSemestre;
-    const idProfesseur = cour.idProfesseur;
+  // const htmlContent = cours.map(cour => {
+  //   // Extraire les informations directement du cours
+  //   const idCours = cour.id;
+  //   const dateCours = cour.dateCours;
+  //   const idClasse = cour.idClasse;
+  //   const idSemestre = cour.idSemestre;
+  //   const idProfesseur = cour.idProfesseur;
 
-    return `
-      <tr>
-        <td>${idCours}</td>
-        <td>${dateCours}</td>
-        <td>${idClasse}</td>
-        <td>${idSemestre}</td>
-        <td>${idProfesseur}</td>
-      </tr>
-    `;
-  }).join('');
+  //   return `
+  //     <tr>
+  //       <td>${idCours}</td>
+  //       <td>${dateCours}</td>
+  //       <td>${idClasse}</td>
+  //       <td>${idSemestre}</td>
+  //       <td>${idProfesseur}</td>
+  //     </tr>
+  //   `;
+  // }).join('');
 
   // Insérer le HTML généré dans le tbody
   tBody.innerHTML = htmlContent;
