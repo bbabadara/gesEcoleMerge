@@ -1,4 +1,4 @@
-.sidebar-collapsed {
+/* .sidebar-collapsed {
 width: 5.5rem;
 }
 
@@ -19,3 +19,50 @@ display: flex;
 align-items: center;
 justify-content: center;
 }
+ */
+
+ .sidebar {
+    width: 16rem; /* Largeur normale */
+    transition: width 0.3s ease-in-out;
+  }
+  
+  .sidebar-collapsed {
+    width: 5.5rem;
+  }
+  
+  .sidebar-collapsed .logo-text,
+  .sidebar-collapsed .menu-text {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .sidebar-collapsed .logo-only {
+    display: block;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .sidebar-collapsed .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .tooltip {
+    position: absolute;
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    z-index: 1000;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+  }
+  
+  .tooltip.visible {
+    opacity: 1;
+  }
+    
