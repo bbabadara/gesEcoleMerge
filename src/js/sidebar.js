@@ -12,3 +12,4 @@
     // Alterne la classe 'sidebar-collapsed' pour cacher le texte et réduire la sidebar
     sidebar.classList.toggle('sidebar-collapsed');
   });
+  
