@@ -5,21 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <style>
         [x-cloak] { display: none; }
     </style>
 </head>
-<body class="bg-gray-100 min-h-screen flex">
+<body class="bg-gray-100 min-h-screen flex" x-data="{ sidebarExpanded: true }">
     <!-- Sidebar -->
-    <aside class="w-64 bg-blue-600 text-white flex flex-col">
+    <aside :class="sidebarExpanded ? 'w-64' : 'w-20'" class="bg-blue-600 text-white flex flex-col transition-all duration-300">
         <div class="flex items-center p-4">
             <img src="https://via.placeholder.com/40" alt="Logo" class="h-10 w-10 rounded-full">
-            <span class="ml-2 text-lg font-bold">Ecole221</span>
+            <span x-show="sidebarExpanded" class="ml-2 text-lg font-bold transition-all duration-300">Ecole221</span>
         </div>
         <nav class="mt-6">
             <ul>
-                <li class="p-4 hover:bg-blue-700 cursor-pointer">Mes Cours</li>
-                <li class="p-4 hover:bg-blue-700 cursor-pointer">Mes Absences</li>
+                <li class="group flex items-center p-4 hover:bg-blue-700 cursor-pointer relative">
+                    <span class="material-icons">menu_book</span>
+                    <span x-show="sidebarExpanded" class="ml-3">Mes Cours</span>
+                    <span x-show="!sidebarExpanded" class="absolute left-full ml-2 bg-gray-700 text-white text-xs p-1 rounded hidden group-hover:block">Mes Cours</span>
+                </li>
+                <li class="group flex items-center p-4 hover:bg-blue-700 cursor-pointer relative">
+                    <span class="material-icons">event_busy</span>
+                    <span x-show="sidebarExpanded" class="ml-3">Mes Absences</span>
+                    <span x-show="!sidebarExpanded" class="absolute left-full ml-2 bg-gray-700 text-white text-xs p-1 rounded hidden group-hover:block">Mes Absences</span>
+                </li>
             </ul>
         </nav>
     </aside>
@@ -28,7 +37,10 @@
     <div class="flex-1 flex flex-col">
         <!-- Navbar -->
         <header class="bg-white shadow p-4 flex justify-between items-center">
-            <div>
+            <div class="flex items-center">
+                <button @click="sidebarExpanded = !sidebarExpanded" class="mr-4 focus:outline-none">
+                    <span class="material-icons">menu</span>
+                </button>
                 <input type="text" placeholder="Rechercher..." class="border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring focus:ring-blue-300">
             </div>
             <div class="relative" x-data="{ open: false }">
