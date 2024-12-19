@@ -1,0 +1,21 @@
+.sidebar-collapsed {
+width: 5.5rem;
+}
+
+.sidebar-collapsed .logo-text {
+display: none;
+}
+
+.sidebar-collapsed .menu-text {
+display: none;
+}
+
+.sidebar-collapsed .logo-only {
+display: block;
+}
+
+.sidebar-collapsed .logo {
+display: flex;
+align-items: center;
+justify-content: center;
+}
