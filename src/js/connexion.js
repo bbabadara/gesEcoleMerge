@@ -1,5 +1,6 @@
 // connexion.js
 
+// Fonction principale pour gérer la connexion
 const btnLogin = document.getElementById('btnlogin');
 
 btnLogin.addEventListener('click', async function () {
@@ -11,25 +12,25 @@ btnLogin.addEventListener('click', async function () {
         return;
     }
 
+    // Envoi des données au serveur
     try {
-        // Récupération des utilisateurs depuis le serveur
         const response = await fetch('http://localhost:3000/etudiants');
-        if (!response.ok) {
-            showError('Impossible de contacter le serveur.');
-            return;
-        }
 
-        const etudiants = await response.json();
+        if (response.ok) {
+            const etudiants = await response.json();
+            
+            // Recherche de l'utilisateur correspondant
+            const etudiant = etudiants.find(et => et.login === login && et.mdp === pwd);
 
-        // Recherche de l'utilisateur correspondant
-        const etudiant = etudiants.find(et => et.login === login && et.mdp === pwd);
-
-        if (etudiant) {
-            console.log('Connexion réussie', etudiant);
-            redirectToCourses();
+            if (etudiant) {
+                console.log('Connexion réussie', etudiant);
+                redirectToCourses(etudiant);
+            } else {
+                showError('Login ou mot de passe incorrect.');
+                document.getElementById('pwd').value = '';
+            }
         } else {
-            showError('Login ou mot de passe incorrect.');
-            document.getElementById('pwd').value = '';
+            showError('Erreur de connexion avec le serveur');
         }
     } catch (error) {
         console.error('Erreur réseau :', error);
@@ -48,10 +49,14 @@ function validateInputs(login, pwd) {
 
 // Fonction pour afficher une erreur
 function showError(message) {
-    alert(message); // Peut être remplacé par une bannière ou un message intégré dans la page
+    alert(message); // 
 }
 
 // Fonction pour rediriger vers la page des cours
-function redirectToCourses() {
+function redirectToCourses(etudiant) {
+    // Sauvegarder les données de l'étudiant dans le localStorage
+    localStorage.setItem('etudiantConnecte', JSON.stringify(etudiant));
+
+    // Redirection
     window.location.href = "listecours.html";
 }
