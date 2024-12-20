@@ -1,3 +1,27 @@
+// Récupérer la chaîne JSON depuis localStorage
+const etudiantJSON = localStorage.getItem('etudiantConnecte');
+
+// Vérifier si des données existent dans localStorage
+if (etudiantJSON) {
+  // Parser la chaîne JSON pour obtenir l'objet étudiant
+  const etudiant = JSON.parse(etudiantJSON);
+
+  // Utiliser les données pour mettre à jour l'interface utilisateur (comme dans l'exemple précédent)
+    const nomElement = document.querySelector('#dropdown-user .text-sm:first-child');
+    const matriculeElement = document.querySelector('#dropdown-user .text-sm:nth-child(2)');
+
+    if (nomElement) {
+        nomElement.textContent = etudiant.nomComplet;
+    }
+
+    if (matriculeElement) {
+        matriculeElement.textContent = `Matricule: ${etudiant.matricule}`;
+    }
+} else {
+  // Gérer le cas où aucune donnée n'est trouvée dans localStorage
+  console.log("Aucun étudiant trouvé dans localStorage.");
+    window.location.href = "connexion.html";
+}
 // Fonction pour récupérer la liste des cours
 async function fetchCours() {
   try {
