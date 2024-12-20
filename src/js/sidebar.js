@@ -37,6 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     item.addEventListener('mouseleave', () => {
       tooltip.classList.remove('visible');
+      let element = document.getElementById('id');
     });
   });
 });
