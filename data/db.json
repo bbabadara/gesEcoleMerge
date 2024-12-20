@@ -1,121 +1,331 @@
 {
-    "niveaux": [
-      { "id": 1, "nom": "licence 1" },
-      { "id": 2, "nom": "licence 2" },
-      { "id": 3, "nom": "licence 3" },
-      { "id": 4, "nom": "master 1" },
-      { "id": 5, "nom": "master 2" }
-    ],
-    "semestres": [
-      { "id": 1, "nom": "semestre 1", "etat": "en cours" },
-      { "id": 2, "nom": "semestre 2", "etat": "terminé" },
-      { "id": 3, "nom": "semestre 3", "etat": "planifié" },
-      { "id": 4, "nom": "semestre 4", "etat": "terminé" }
-    ],
-    "classes": [
-      { "id": 1, "nom": "informatique l1", "idNiveau": 1 },
-      { "id": 2, "nom": "mathématiques l2", "idNiveau": 2 },
-      { "id": 3, "nom": "physique l3", "idNiveau": 3 },
-      { "id": 4, "nom": "informatique m1", "idNiveau": 4 },
-      { "id": 5, "nom": "chimie m2", "idNiveau": 5 }
-    ],
-    "etudiants": [
-      {
-        "id": 1,
-        "matricule": "etu001",
-        "nomComplet": "Samba Ndiaye",
-        "adresse": "dakar",
-        "login": "sndiaye",
-        "mdp": "mdp123",
-        "idClasse": 1
-      },
-      {
-        "id": 2,
-        "matricule": "etu002",
-        "nomComplet": "Fatou Diop",
-        "adresse": "thiès",
-        "login": "fdiop",
-        "mdp": "mdp123",
-        "idClasse": 2
-      },
-      {
-        "id": 3,
-        "matricule": "etu003",
-        "nomComplet": "Ibrahima Ba",
-        "adresse": "saint-louis",
-        "login": "iba",
-        "mdp": "mdp123",
-        "idClasse": 3
-      },
-      {
-        "id": 4,
-        "matricule": "etu004",
-        "nomComplet": "Mariama Sow",
-        "adresse": "kaolack",
-        "login": "msow",
-        "mdp": "mdp123",
-        "idClasse": 4
-      },
-      {
-        "id": 5,
-        "matricule": "etu005",
-        "nomComplet": "Cheikh Fall",
-        "adresse": "ziguinchor",
-        "login": "cfall",
-        "mdp": "mdp123",
-        "idClasse": 5
-      }
-    ],
-    "professeurs": [
-      {
-        "id": 1,
-        "nom": "ba",
-        "prenom": "cheikh",
-        "grade": "maître de conférences",
-        "specialite": "informatique"
-      },
-      {
-        "id": 2,
-        "nom": "faye",
-        "prenom": "aissatou",
-        "grade": "docteur",
-        "specialite": "mathématiques"
-      },
-      {
-        "id": 3,
-        "nom": "diagne",
-        "prenom": "abdoulaye",
-        "grade": "professeur agrégé",
-        "specialite": "physique"
-      },
-      {
-        "id": 4,
-        "nom": "ndour",
-        "prenom": "awa",
-        "grade": "docteur",
-        "specialite": "chimie"
-      }
-    ],
-    "cours": [
-      { "id": 1, "dateCours": "2024-01-15", "idClasse": 1, "idSemestre": 1, "idProfesseur": 1 },
-      { "id": 2, "dateCours": "2024-01-20", "idClasse": 2, "idSemestre": 2, "idProfesseur": 2 },
-      { "id": 3, "dateCours": "2024-02-10", "idClasse": 3, "idSemestre": 3, "idProfesseur": 3 },
-      { "id": 4, "dateCours": "2024-02-15", "idClasse": 4, "idSemestre": 4, "idProfesseur": 1 },
-      { "id": 5, "dateCours": "2024-03-01", "idClasse": 5, "idSemestre": 4, "idProfesseur": 4 }
-    ],
-    "seances": [
-      { "id": 1, "date": "2024-01-15", "heureDebut": "08:00", "heureFin": "10:00", "idCours": 1 },
-      { "id": 2, "date": "2024-01-20", "heureDebut": "10:00", "heureFin": "12:00", "idCours": 2 },
-      { "id": 3, "date": "2024-02-10", "heureDebut": "14:00", "heureFin": "16:00", "idCours": 3 },
-      { "id": 4, "date": "2024-02-15", "heureDebut": "08:00", "heureFin": "10:00", "idCours": 4 },
-      { "id": 5, "date": "2024-03-01", "heureDebut": "10:00", "heureFin": "12:00", "idCours": 5 }
-    ],
-    "absences": [
-      { "id": 1, "dateAbs": "2024-01-15", "idEtudiant": 1, "idSeance": 1 },
-      { "id": 2, "dateAbs": "2024-01-20", "idEtudiant": 2, "idSeance": 2 },
-      { "id": 3, "dateAbs": "2024-02-10", "idEtudiant": 3, "idSeance": 3 },
-      { "id": 4, "dateAbs": "2024-02-15", "idEtudiant": 4, "idSeance": 4 },
-      { "id": 5, "dateAbs": "2024-03-01", "idEtudiant": 5, "idSeance": 5 }
-    ]
-  }
-  
+  "niveaux": [
+    {
+      "id": "1",
+      "nom": "licence 1"
+    },
+    {
+      "id": "2",
+      "nom": "licence 2"
+    },
+    {
+      "id": "3",
+      "nom": "licence 3"
+    },
+    {
+      "id": "4",
+      "nom": "master 1"
+    },
+    {
+      "id": "5",
+      "nom": "master 2"
+    }
+  ],
+  "semestres": [
+    {
+      "id": "1",
+      "nom": "semestre 1",
+      "etat": "en cours"
+    },
+    {
+      "id": "2",
+      "nom": "semestre 2",
+      "etat": "terminé"
+    },
+    {
+      "id": "3",
+      "nom": "semestre 3",
+      "etat": "planifié"
+    },
+    {
+      "id": "4",
+      "nom": "semestre 4",
+      "etat": "terminé"
+    }
+  ],
+  "classes": [
+    {
+      "id": "1",
+      "nom": "informatique l1",
+      "idNiveau": 1
+    },
+    {
+      "id": "2",
+      "nom": "mathématiques l2",
+      "idNiveau": 2
+    },
+    {
+      "id": "3",
+      "nom": "physique l3",
+      "idNiveau": 3
+    },
+    {
+      "id": "4",
+      "nom": "informatique m1",
+      "idNiveau": 4
+    },
+    {
+      "id": "5",
+      "nom": "chimie m2",
+      "idNiveau": 5
+    }
+  ],
+  "etudiants": [
+    {
+      "id": "1",
+      "matricule": "etu001",
+      "nomComplet": "Samba Ndiaye",
+      "adresse": "dakar",
+      "login": "sndiaye",
+      "mdp": "mdp123",
+      "idClasse": 1
+    },
+    {
+      "id": "2",
+      "matricule": "etu002",
+      "nomComplet": "Fatou Diop",
+      "adresse": "thiès",
+      "login": "fdiop",
+      "mdp": "mdp123",
+      "idClasse": 2
+    },
+    {
+      "id": "3",
+      "matricule": "etu003",
+      "nomComplet": "Ibrahima Ba",
+      "adresse": "saint-louis",
+      "login": "iba",
+      "mdp": "mdp123",
+      "idClasse": 3
+    },
+    {
+      "id": "4",
+      "matricule": "etu004",
+      "nomComplet": "Mariama Sow",
+      "adresse": "kaolack",
+      "login": "msow",
+      "mdp": "mdp123",
+      "idClasse": 4
+    },
+    {
+      "id": "5",
+      "matricule": "etu005",
+      "nomComplet": "Cheikh Fall",
+      "adresse": "ziguinchor",
+      "login": "cfall",
+      "mdp": "mdp123",
+      "idClasse": 5
+    },
+    {
+      "id": "48a0",
+      "login": "",
+      "pwd": ""
+    },
+    {
+      "id": "182f",
+      "login": "",
+      "pwd": ""
+    },
+    {
+      "id": "c794",
+      "login": "",
+      "pwd": ""
+    },
+    {
+      "id": "36b3",
+      "login": "",
+      "pwd": ""
+    },
+    {
+      "id": "63d7",
+      "login": "",
+      "pwd": ""
+    },
+    {
+      "id": "3e9e",
+      "login": "",
+      "pwd": ""
+    },
+    {
+      "id": "2918",
+      "login": "",
+      "pwd": ""
+    },
+    {
+      "id": "c218",
+      "login": "",
+      "pwd": ""
+    },
+    {
+      "id": "f6f1",
+      "login": "",
+      "pwd": ""
+    },
+    {
+      "id": "951f",
+      "login": "",
+      "pwd": ""
+    },
+    {
+      "id": "cfcf",
+      "login": "sndiaye",
+      "pwd": "mdp123"
+    },
+    {
+      "id": "eac9",
+      "login": "",
+      "pwd": ""
+    },
+    {
+      "id": "e6d4",
+      "login": "sdf",
+      "pwd": "3rer"
+    },
+    {
+      "id": "5d00",
+      "login": "paul.durand@example.com",
+      "pwd": "pa"
+    },
+    {
+      "id": "fee3",
+      "login": "djami@gmail.com",
+      "pwd": "euh8338"
+    }
+  ],
+  "professeurs": [
+    {
+      "id": "1",
+      "nom": "ba",
+      "prenom": "cheikh",
+      "grade": "maître de conférences",
+      "specialite": "informatique"
+    },
+    {
+      "id": "2",
+      "nom": "faye",
+      "prenom": "aissatou",
+      "grade": "docteur",
+      "specialite": "mathématiques"
+    },
+    {
+      "id": "3",
+      "nom": "diagne",
+      "prenom": "abdoulaye",
+      "grade": "professeur agrégé",
+      "specialite": "physique"
+    },
+    {
+      "id": "4",
+      "nom": "ndour",
+      "prenom": "awa",
+      "grade": "docteur",
+      "specialite": "chimie"
+    }
+  ],
+  "cours": [
+    {
+      "id": "1",
+      "dateCours": "2024-01-15",
+      "idClasse": 1,
+      "idSemestre": 1,
+      "idProfesseur": 1
+    },
+    {
+      "id": "2",
+      "dateCours": "2024-01-20",
+      "idClasse": 2,
+      "idSemestre": 2,
+      "idProfesseur": 2
+    },
+    {
+      "id": "3",
+      "dateCours": "2024-02-10",
+      "idClasse": 3,
+      "idSemestre": 3,
+      "idProfesseur": 3
+    },
+    {
+      "id": "4",
+      "dateCours": "2024-02-15",
+      "idClasse": 4,
+      "idSemestre": 4,
+      "idProfesseur": 1
+    },
+    {
+      "id": "5",
+      "dateCours": "2024-03-01",
+      "idClasse": 5,
+      "idSemestre": 4,
+      "idProfesseur": 4
+    }
+  ],
+  "seances": [
+    {
+      "id": "1",
+      "date": "2024-01-15",
+      "heureDebut": "08:00",
+      "heureFin": "10:00",
+      "idCours": 1
+    },
+    {
+      "id": "2",
+      "date": "2024-01-20",
+      "heureDebut": "10:00",
+      "heureFin": "12:00",
+      "idCours": 2
+    },
+    {
+      "id": "3",
+      "date": "2024-02-10",
+      "heureDebut": "14:00",
+      "heureFin": "16:00",
+      "idCours": 3
+    },
+    {
+      "id": "4",
+      "date": "2024-02-15",
+      "heureDebut": "08:00",
+      "heureFin": "10:00",
+      "idCours": 4
+    },
+    {
+      "id": "5",
+      "date": "2024-03-01",
+      "heureDebut": "10:00",
+      "heureFin": "12:00",
+      "idCours": 5
+    }
+  ],
+  "absences": [
+    {
+      "id": "1",
+      "dateAbs": "2024-01-15",
+      "idEtudiant": 1,
+      "idSeance": 1
+    },
+    {
+      "id": "2",
+      "dateAbs": "2024-01-20",
+      "idEtudiant": 2,
+      "idSeance": 2
+    },
+    {
+      "id": "3",
+      "dateAbs": "2024-02-10",
+      "idEtudiant": 3,
+      "idSeance": 3
+    },
+    {
+      "id": "4",
+      "dateAbs": "2024-02-15",
+      "idEtudiant": 4,
+      "idSeance": 4
+    },
+    {
+      "id": "5",
+      "dateAbs": "2024-03-01",
+      "idEtudiant": 5,
+      "idSeance": 5
+    }
+  ]
+}
