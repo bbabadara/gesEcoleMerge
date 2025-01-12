@@ -1,0 +1,179 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+
+</head>
+<body class="flex">
+
+  <aside id="logo-sidebar" class="w-1/6 h-screen transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidebar">
+    <div class="h-full flex flex-col items-stretch px-3 py-4 overflow-y-auto bg-indigo-800 dark:bg-gray-800 transition-all duration-300" id="sidebar-content">
+      <!-- Conteneur du logo et du texte -->
+      <a href="listecours.html" class="flex items-center logo w-full h-10">
+        <img src="/src/images/logo.png" class="h-8 logo-only" alt="Logo"/>
+        <span class="logo-text self-center text-xl ms-3 text-white font-semibold sm:text-2xl whitespace-nowrap dark:text-white">Ecole 221</span>
+      </a>
+      <div class="mt-3 h-5/6">
+        <ul class="space-y-2 font-medium">
+          <li data-tooltip="Voir mes cours" class="menu-item text-white hover:text-indigo-800 active:bg-white flex items-center p-2 rounded-lg dark:text-white hover:bg-white dark:hover:bg-blue-700 group">
+            <a href="/src/pages/profviews/seancesdujour.html" class="flex items-center p-2 rounded-lg dark:text-white hover:bg-white dark:hover:bg-blue-700 group">
+              <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 9h6m-6 3h6m-6 3h6M6.996 9h.01m-.01 3h.01m-.01 3h.01M4 5h16a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Z"/>
+              </svg>
+              <span class="menu-text flex-1 ms-3 whitespace-nowrap">Mes séances</span>
+            </a>
+          </li>
+          <li data-tooltip="Voir mes absences" class="menu-item text-white hover:text-indigo-800 flex items-center p-2 rounded-lg dark:text-white hover:bg-white dark:hover:bg-blue-700 group">
+            <a href="/src/pages/profviews/coursprofs.html" class="flex items-center p-2 rounded-lg dark:text-white hover:bg-white  dark:hover:bg-blue-700 group">
+              <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 9h6m-6 3h6m-6 3h6M6.996 9h.01m-.01 3h.01m-.01 3h.01M4 5h16a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Z"/>
+              </svg>
+            <span class="menu-text flex-1 ms-3 whitespace-nowrap">Mes cours</span>
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </aside>
+
+  <div class="main w-full flex flex-col  ms-1">
+    <nav class="w-full flex items-center justify-end bg-indigo-800 border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700">
+      <div class="" id="toggle">
+        <svg class="w-8 h-8 text-white dark:text-white rounded-full p-1 hover:bg-white hover:text-indigo-800 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+          <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5 7h14M5 12h14M5 17h10"/>
+        </svg>
+      </div>
+      <div class="px-3 py-3 lg:px-5 lg:pl-3 w-full">
+        <div class="flex items-center justify-end ">
+          <div class="flex items-center">
+              <div class="flex items-center ms-3">
+                <div class="">
+                  <button type="button" class="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" aria-expanded="false" data-dropdown-toggle="dropdown-user">
+                    <img class="w-8 h-8 rounded-full" src="/src/images/student.jpeg" alt="user">
+                  </button>
+                </div>
+                <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded shadow dark:bg-gray-700 dark:divide-gray-600" id="dropdown-user">
+                  <div class="px-4 py-3 text-sm font-medium text-gray-900 dark:text-white">
+                    <p> Badara BA </p>
+                    <p> Matricule: etu001221 </p>
+                  </div>
+                  <ul>
+                    <li>
+                      <a href="/src/pages/connexion.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">Déconnexion</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+    </nav>
+    <div class="p-4 w-full">
+      <div class="p-4  rounded-lg dark:border-gray-700">
+        <!-- Contenu -->
+        <div class="flex items-center justify-between">
+            <div class="flex items-center border border-2 p-2 bg-indigo-800 text-white text-sm font-medium rounded-lg">
+              <span> Semestre: </span>
+              <select id="" class="flex items-center bg-indigo-800 border-none outline-none ps-2 block w-full  dark:bg-indigo-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white">
+                <option value="S1"> S1 </option>
+                <option value="S2"> S2 </option>
+              </select>
+            </div>
+            <p class="font-medium"> Année scolaire: <span>2024/2025</span> </p>
+        </div>
+  
+        <div class="flex items-center text-xl mt-10">
+        <p class="font-medium"> Liste de mes cours </p>
+        </div>
+        <div class="relative overflow-x-auto mt-5">
+            <table class="w-full text-sm text-center rtl:text-right text-gray-500 dark:text-gray-400">
+                <thead class="text-xs text-white uppercase bg-indigo-800 dark:bg-indigo-800 dark:text-white">
+                    <tr class="">
+                        <th scope="col" class="px-6 py-3">
+                            Libellé
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            Nombre d'heures
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            Professeur
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            Séances
+                        </th>
+                    </tr>
+                </thead>
+                <tbody id="tbody">
+                    <tr class="bg-white border dark:bg-gray-800 dark:border-gray-700">
+                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                            Programmation
+                        </th>
+                        <td class="px-6 py-4">
+                            20H
+                        </td>
+                        <td class="px-6 py-4">
+                            WANE
+                        </td>
+                        <td class="px-6 py-4 flex justify-center">
+                          <a href="/src/pages/profviews/seancesparcours.html" data-modal-target="default-modal" data-modal-toggle="default-modal">
+                            <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                              <path stroke="currentColor" stroke-width="2" d="M21 12c0 1.2-4.03 6-9 6s-9-4.8-9-6c0-1.2 4.03-6 9-6s9 4.8 9 6Z"/>
+                              <path stroke="currentColor" stroke-width="2" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
+                            </svg> 
+                          </a>                       
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- Pagination -->
+        <div class="flex items-center justify-between mt-5">
+            <div>
+                <span class="text-base text-gray-700 dark:text-gray-400">
+                Showing <span class="font-semibold text-indigo-900 dark:text-indigo-800">1</span> to 
+                <span class="font-semibold text-indigo-900 dark:text-indigo-800">5</span> of 
+                <span class="font-semibold text-indigo-900 dark:text-indigo-800">100</span> Entries
+                </span>
+            </div>
+            <div>
+                <ul class="flex items-center -space-x-px h-10 text-base">
+                <li class="">
+                    <a href="#" class="flex items-center justify-center px-4 h-10 ms-0 leading-tight text-gray-500 bg-white border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-white dark:border-gray-700 dark:text-gray-500 dark:hover:bg-white">
+                    <svg class="w-5 h-5 text-gray-500 dark:text-indigo-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 10 16">
+                        <path d="M8.766.566A2 2 0 0 0 6.586 1L1 6.586a2 2 0 0 0 0 2.828L6.586 15A2 2 0 0 0 10 13.586V2.414A2 2 0 0 0 8.766.566Z"/>
+                    </svg>
+                    </a>
+                </li>
+                <li class="px-1">
+                    <a href="#" class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 rounded-full bg-blue-50 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white">1</a>
+                </li>
+                <li class="px-1">
+                    <a href="#" class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 rounded-full bg-blue-50 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white">2</a>
+                </li>
+                <li class="px-1">
+                    <a href="#" class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 rounded-full bg-blue-50 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white">3</a>
+                </li>
+                <li class="">
+                    <a href="#" class="flex items-center justify-center px-4 h-10 ms-0 leading-tight text-gray-500 bg-white border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-white dark:border-gray-700 dark:text-gray-400 dark:hover:bg-white">
+                    <svg class="w-5 h-5 text-gray-500 dark:text-indigo-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 10 16">
+                        <path d="M3.414 1A2 2 0 0 0 0 2.414v11.172A2 2 0 0 0 3.414 15L9 9.414a2 2 0 0 0 0-2.828L3.414 1Z"/>
+                    </svg>
+                    </a>
+                </li>
+                </ul>
+            </div>
+        </div>
+      </div>
+   </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+  <script src="/src/js/liscours.js"></script>
+  <script src="/src/js/sidebar.js"></script>
+</body>
+</html>
