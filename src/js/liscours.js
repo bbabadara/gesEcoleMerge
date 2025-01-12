@@ -1,86 +1,115 @@
-// Récupérer la chaîne JSON depuis localStorage
-const etudiantJSON = localStorage.getItem('etudiantConnecte');
+// listecours.js
 
-// Vérifier si des données existent dans localStorage
-if (etudiantJSON) {
-  // Parser la chaîne JSON pour obtenir l'objet étudiant
-  const etudiant = JSON.parse(etudiantJSON);
+// Constants
+const API_URL = 'http://localhost:3000';
+const ROUTES = {
+  LOGIN: 'connexion.html'
+};
 
-  // Utiliser les données pour mettre à jour l'interface utilisateur (comme dans l'exemple précédent)
-    const nomElement = document.querySelector('#dropdown-user .text-sm:first-child');
-    const matriculeElement = document.querySelector('#dropdown-user .text-sm:nth-child(2)');
+// Local Storage Utils
+const getStoredStudent = () => {
+  const data = localStorage.getItem('etudiantConnecte');
+  return data ? JSON.parse(data) : null;
+};
 
-    if (nomElement) {
-        nomElement.textContent = etudiant.nomComplet;
-    }
+// API Service
+const fetchData = async (endpoint) => {
+  const response = await fetch(`${API_URL}/${endpoint}`);
+  if (!response.ok) throw new Error(`Erreur API: ${endpoint}`);
+  return response.json();
+};
 
-    if (matriculeElement) {
-        matriculeElement.textContent = `Matricule: ${etudiant.matricule}`;
-    }
-} else {
-  // Gérer le cas où aucune donnée n'est trouvée dans localStorage
-  console.log("Aucun étudiant trouvé dans localStorage.");
-    window.location.href = "connexion.html";
-}
-// Fonction pour récupérer la liste des cours
-async function fetchCours() {
+// Course Data Service
+const fetchCourseData = async (classId) => {
   try {
-    // Faire une requête GET à l'API JSON Server
-    const response = await fetch('http://localhost:3000/cours');
-    
-    // Vérifier que la réponse est ok
-    if (!response.ok) {
-      throw new Error('Erreur lors de la récupération des données');
-    }
+    const [courses, professors] = await Promise.all([
+      fetchData('cours'),
+      fetchData('professeurs')
+    ]);
 
-    // Convertir la réponse en JSON
-    const data = await response.json();
-    
-    // Afficher les cours sur la page
-    displayCours(data);
+    return courses
+      .filter(course => course.idClasse === classId)
+      .map(course => {
+        const professor = professors.find(p => p.id === course.idProfesseur);
+        return {
+          ...course,
+          nomProfesseur: professor ? `${professor.prenom} ${professor.nom}` : 'Inconnu'
+        };
+      });
   } catch (error) {
-    console.error('Erreur:', error);
+    console.error('Erreur lors de la récupération des cours:', error);
+    return [];
   }
-}
+};
 
-// Fonction pour afficher les cours sur la page (dans un tableau)
-function displayCours(cours) {
-  // Vérification que les cours existent et que le tbody est présent
-  if (!Array.isArray(cours) || cours.length === 0) {
-    console.error('Aucun cours à afficher');
+// UI Updates
+const updateStudentInfo = (student) => {
+  const nameElement = document.querySelector('#dropdown-user .text-sm:first-child');
+  const idElement = document.querySelector('#dropdown-user .text-sm:nth-child(2)');
+
+  if (nameElement) nameElement.textContent = student.nomComplet;
+  if (idElement) idElement.textContent = `Matricule: ${student.matricule}`;
+};
+
+const renderCourseTable = (courses) => {
+  const tbody = document.querySelector('#tbody');
+  if (!tbody) return;
+
+  tbody.innerHTML = courses.map(course => `
+    <tr class="bg-white border dark:bg-gray-800 dark:border-gray-700">
+      <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+        ${course.libelle}
+      </th>
+      <td class="px-6 py-4">
+        ${course.nombreHeures}H
+      </td>
+      <td class="px-6 py-4">
+        ${course.nomProfesseur}
+      </td>
+      <td class="px-6 py-4 flex justify-center">
+        <a href="#" data-modal-target="default-modal" data-modal-toggle="default-modal" 
+           data-course-id="${course.id}">
+          <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-width="2" d="M21 12c0 1.2-4.03 6-9 6s-9-4.8-9-6c0-1.2 4.03-6 9-6s9 4.8 9 6Z"/>
+            <path stroke="currentColor" stroke-width="2" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
+          </svg>
+        </a>
+      </td>
+    </tr>
+  `).join('');
+};
+
+// Event Handlers
+const handleSemestreChange = async (student) => {
+  const semestreSelect = document.querySelector('select');
+  if (!semestreSelect) return;
+
+  semestreSelect.addEventListener('change', async () => {
+    const courses = await fetchCourseData(student.idClasse);
+    renderCourseTable(courses);
+  });
+};
+
+// Main Initialization
+const initializePage = async () => {
+  const student = getStoredStudent();
+  
+  if (!student) {
+    console.log("Session expirée");
+    window.location.href = ROUTES.LOGIN;
     return;
   }
 
-  const tBody = document.querySelector('#tbody');
-  if (!tBody) {
-    console.error('Elément tbody introuvable');
-    return;
+  updateStudentInfo(student);
+  
+  try {
+    const courses = await fetchCourseData(student.idClasse);
+    renderCourseTable(courses);
+    handleSemestreChange(student);
+  } catch (error) {
+    console.error('Erreur d\'initialisation:', error);
   }
+};
 
-  // Créer le contenu HTML pour toutes les lignes
-  // const htmlContent = cours.map(cour => {
-  //   // Extraire les informations directement du cours
-  //   const idCours = cour.id;
-  //   const dateCours = cour.dateCours;
-  //   const idClasse = cour.idClasse;
-  //   const idSemestre = cour.idSemestre;
-  //   const idProfesseur = cour.idProfesseur;
-
-  //   return `
-  //     <tr>
-  //       <td>${idCours}</td>
-  //       <td>${dateCours}</td>
-  //       <td>${idClasse}</td>
-  //       <td>${idSemestre}</td>
-  //       <td>${idProfesseur}</td>
-  //     </tr>
-  //   `;
-  // }).join('');
-
-  // Insérer le HTML généré dans le tbody
-  tBody.innerHTML = htmlContent;
-}
-
-
-// Appeler la fonction pour récupérer les cours dès que la page est chargée
-window.onload = fetchCours;
+// Start the application when DOM is ready
+document.addEventListener('DOMContentLoaded', initializePage);
