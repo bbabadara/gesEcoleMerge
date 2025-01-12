@@ -1,0 +1,186 @@
+{
+    "anneesScolaires": [
+      { "id": 1, "libelle": "2023-2024", "etat": "En cours" },
+      { "id": 2, "libelle": "2022-2023", "etat": "Terminée" },
+      { "id": 3, "libelle": "2024-2025", "etat": "Planifiée" }
+    ],
+    "niveaux": [
+      { "id": 1, "libelle": "Licence 1" },
+      { "id": 2, "libelle": "Licence 2" },
+      { "id": 3, "libelle": "Licence 3" },
+      { "id": 4, "libelle": "Master 1" },
+      { "id": 5, "libelle": "Master 2" }
+    ],
+    "filieres": [
+      { "id": 1, "libelle": "Informatique" },
+      { "id": 2, "libelle": "Mathématiques" },
+      { "id": 3, "libelle": "Physique" },
+      { "id": 4, "libelle": "Chimie" }
+    ],
+    "semestres": [
+      { "id": 1, "libelle": "Semestre 1", "etat": "En cours", "idAnneeScolaire": 1 },
+      { "id": 2, "libelle": "Semestre 2", "etat": "Terminé", "idAnneeScolaire": 1 },
+      { "id": 3, "libelle": "Semestre 3", "etat": "Planifié", "idAnneeScolaire": 3 },
+      { "id": 4, "libelle": "Semestre 4", "etat": "Terminé", "idAnneeScolaire": 2 }
+    ],
+    "classes": [
+      { "id": 1, "libelle": "Informatique L1", "idNiveau": 1, "idFiliere": 1, "idAnneeScolaire": 1 },
+      { "id": 2, "libelle": "Mathématiques L2", "idNiveau": 2, "idFiliere": 2, "idAnneeScolaire": 1 },
+      { "id": 3, "libelle": "Physique L3", "idNiveau": 3, "idFiliere": 3, "idAnneeScolaire": 1 },
+      { "id": 4, "libelle": "Informatique M1", "idNiveau": 4, "idFiliere": 1, "idAnneeScolaire": 2 },
+      { "id": 5, "libelle": "Chimie M2", "idNiveau": 5, "idFiliere": 4, "idAnneeScolaire": 2 }
+    ],
+    "modules": [
+      { "id": 1, "libelle": "Programmation", "idSemestre": 1, "idFiliere": 1 },
+      { "id": 2, "libelle": "Analyse Mathématique", "idSemestre": 2, "idFiliere": 2 },
+      { "id": 3, "libelle": "Mécanique Quantique", "idSemestre": 3, "idFiliere": 3 },
+      { "id": 4, "libelle": "Chimie Organique", "idSemestre": 4, "idFiliere": 4 },
+      { "id": 5, "libelle": "Intelligence Artificielle", "idSemestre": 1, "idFiliere": 1 }
+    ],
+    "inscriptions": [
+      { "id": 1, "dateInscription": "2024-01-01", "idEtudiant": 1, "idAnneeScolaire": 1 },
+      { "id": 2, "dateInscription": "2024-01-01", "idEtudiant": 2, "idAnneeScolaire": 1 },
+      { "id": 3, "dateInscription": "2023-09-10", "idEtudiant": 3, "idAnneeScolaire": 2 },
+      { "id": 4, "dateInscription": "2023-09-10", "idEtudiant": 4, "idAnneeScolaire": 2 },
+      { "id": 5, "dateInscription": "2023-09-10", "idEtudiant": 5, "idAnneeScolaire": 3 }
+    ],
+    "etudiants": [
+      {
+        "id": 1,
+        "matricule": "ETU001",
+        "nomComplet": "Samba Ndiaye",
+        "adresse": "Dakar",
+        "login": "sndiaye",
+        "mdp": "mdp123",
+        "idClasse": 1
+      },
+      {
+        "id": 2,
+        "matricule": "ETU002",
+        "nomComplet": "Fatou Diop",
+        "adresse": "Thiès",
+        "login": "fdiop",
+        "mdp": "mdp123",
+        "idClasse": 2
+      },
+      {
+        "id": 3,
+        "matricule": "ETU003",
+        "nomComplet": "Ibrahima Ba",
+        "adresse": "Saint-Louis",
+        "login": "iba",
+        "mdp": "mdp123",
+        "idClasse": 3
+      },
+      {
+        "id": 4,
+        "matricule": "ETU004",
+        "nomComplet": "Mariama Sow",
+        "adresse": "Kaolack",
+        "login": "msow",
+        "mdp": "mdp123",
+        "idClasse": 4
+      },
+      {
+        "id": 5,
+        "matricule": "ETU005",
+        "nomComplet": "Cheikh Fall",
+        "adresse": "Ziguinchor",
+        "login": "cfall",
+        "mdp": "mdp123",
+        "idClasse": 5
+      }
+    ],
+    "cours": [
+      { "id": 1, "dateCours": "2024-01-15", "idClasse": 1, "idSemestre": 1, "idProfesseur": 1, "idModule": 1 },
+      { "id": 2, "dateCours": "2024-01-20", "idClasse": 2, "idSemestre": 2, "idProfesseur": 2, "idModule": 2 },
+      { "id": 3, "dateCours": "2024-02-10", "idClasse": 3, "idSemestre": 3, "idProfesseur": 3, "idModule": 3 },
+      { "id": 4, "dateCours": "2024-02-15", "idClasse": 4, "idSemestre": 4, "idProfesseur": 1, "idModule": 4 },
+      { "id": 5, "dateCours": "2024-03-01", "idClasse": 5, "idSemestre": 4, "idProfesseur": 4, "idModule": 5 }
+    ],
+    "seances": [
+      { "id": 1, "date": "2024-01-15", "heureDebut": "08:00", "heureFin": "10:00", "idCours": 1 },
+      { "id": 2, "date": "2024-01-20", "heureDebut": "10:00", "heureFin": "12:00", "idCours": 2 },
+      { "id": 3, "date": "2024-02-10", "heureDebut": "14:00", "heureFin": "16:00", "idCours": 3 },
+      { "id": 4, "date": "2024-02-15", "heureDebut": "08:00", "heureFin": "10:00", "idCours": 4 },
+      { "id": 5, "date": "2024-03-01", "heureDebut": "10:00", "heureFin": "12:00", "idCours": 5 }
+    ],
+    "absences": [
+      { "id": 1, "dateAbs": "2024-01-15", "idEtudiant": 1, "idSeance": 1 },
+      { "id": 2, "dateAbs": "2024-01-20", "idEtudiant": 2, "idSeance": 2 },
+      { "id": 3, "dateAbs": "2024-02-10", "idEtudiant": 3, "idSeance": 3 },
+      { "id": 4, "dateAbs": "2024-02-15", "idEtudiant": 4, "idSeance": 4 },
+      { "id": 5, "dateAbs": "2024-03-01", "idEtudiant": 5, "idSeance": 5 }
+    ],
+  "roles": [
+    { "id": 1, "libelle": "RP" },
+    { "id": 2, "libelle": "AC" },
+    { "id": 3, "libelle": "Professeur" },
+    { "id": 4, "libelle": "Etudiant" }
+  ],
+  "professeurs": [
+    {
+      "id": "1",
+      "nom": "ba",
+      "prenom": "cheikh",
+      "grade": "maître de conférences",
+      "specialite": "informatique"
+    },
+    {
+      "id": "2",
+      "nom": "faye",
+      "prenom": "aissatou",
+      "grade": "docteur",
+      "specialite": "mathématiques"
+    },
+    {
+      "id": "3",
+      "nom": "diagne",
+      "prenom": "abdoulaye",
+      "grade": "professeur agrégé",
+      "specialite": "physique"
+    },
+    {
+      "id": "4",
+      "nom": "ndour",
+      "prenom": "awa",
+      "grade": "docteur",
+      "specialite": "chimie"
+    }
+  ],
+  "utilisateurs": [
+    {
+      "id": 1,
+      "nom": "Samba",
+      "prenom": "Ndiaye",
+      "login": "sndiaye",
+      "mdp": "mdp123",
+      "idRole": 4
+    },
+    {
+      "id": 2,
+      "nom": "Fatou",
+      "prenom": "Diop",
+      "login": "fdiop",
+      "mdp": "mdp123",
+      "idRole": 4
+    },
+    {
+      "id": 3,
+      "nom": "Awa",
+      "prenom": "Diop",
+      "login": "adiop",
+      "mdp": "mdp123",
+      "idRole": 1
+    },
+    {
+      "id": 4,
+      "nom": "ba",
+      "prenom": "cheikh",
+      "login": "cba",
+      "mdp": "mdp123",
+      "idRole": 3
+    }
+  ]
+  }
+  
