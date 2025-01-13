@@ -1,4 +1,52 @@
 {
+    "utilisateurs": [
+      {
+        "id": 1,
+        "nom": "Samba",
+        "prenom": "Ndiaye",
+        "login": "sndiaye",
+        "mdp": "mdp123",
+        "idRole": 4,
+        "matricule": "E001",
+        "nomComplet": "Samba Ndiaye",
+        "idClasse": 1,
+        "photo": "etudiant1.jpg"
+      },
+      {
+        "id": 2,
+        "nom": "Fatou",
+        "prenom": "Diop",
+        "login": "fdiop",
+        "mdp": "mdp123",
+        "idRole": 4,
+        "matricule": "E002",
+        "nomComplet": "Fatou Diop",
+        "idClasse": 2,
+        "photo": "etudiant2.jpg"
+      },
+      {
+        "id": 3,
+        "nom": "Awa",
+        "prenom": "Diop",
+        "login": "adiop",
+        "mdp": "mdp123",
+        "idRole": 1,
+        "grade": "Professeur principal",
+        "specialite": "Mathématiques",
+        "photo": "professeur1.jpg"
+      },
+      {
+        "id": 4,
+        "nom": "Ba",
+        "prenom": "Cheikh",
+        "login": "cba",
+        "mdp": "mdp123",
+        "idRole": 3,
+        "grade": "Professeur associé",
+        "specialite": "Physique",
+        "photo": "professeur2.jpg"
+      }
+    ],
     "anneesScolaires": [
       { "id": 1, "libelle": "2023-2024", "etat": "En cours" },
       { "id": 2, "libelle": "2022-2023", "etat": "Terminée" },
@@ -38,65 +86,18 @@
       { "id": 5, "libelle": "Intelligence Artificielle", "idSemestre": 1, "idFiliere": 1 }
     ],
     "inscriptions": [
-      { "id": 1, "dateInscription": "2024-01-01", "idEtudiant": 1, "idAnneeScolaire": 1 },
-      { "id": 2, "dateInscription": "2024-01-01", "idEtudiant": 2, "idAnneeScolaire": 1 },
-      { "id": 3, "dateInscription": "2023-09-10", "idEtudiant": 3, "idAnneeScolaire": 2 },
-      { "id": 4, "dateInscription": "2023-09-10", "idEtudiant": 4, "idAnneeScolaire": 2 },
-      { "id": 5, "dateInscription": "2023-09-10", "idEtudiant": 5, "idAnneeScolaire": 3 }
-    ],
-    "etudiants": [
-      {
-        "id": 1,
-        "matricule": "ETU001",
-        "nomComplet": "Samba Ndiaye",
-        "adresse": "Dakar",
-        "login": "sndiaye",
-        "mdp": "mdp123",
-        "idClasse": 1
-      },
-      {
-        "id": 2,
-        "matricule": "ETU002",
-        "nomComplet": "Fatou Diop",
-        "adresse": "Thiès",
-        "login": "fdiop",
-        "mdp": "mdp123",
-        "idClasse": 2
-      },
-      {
-        "id": 3,
-        "matricule": "ETU003",
-        "nomComplet": "Ibrahima Ba",
-        "adresse": "Saint-Louis",
-        "login": "iba",
-        "mdp": "mdp123",
-        "idClasse": 3
-      },
-      {
-        "id": 4,
-        "matricule": "ETU004",
-        "nomComplet": "Mariama Sow",
-        "adresse": "Kaolack",
-        "login": "msow",
-        "mdp": "mdp123",
-        "idClasse": 4
-      },
-      {
-        "id": 5,
-        "matricule": "ETU005",
-        "nomComplet": "Cheikh Fall",
-        "adresse": "Ziguinchor",
-        "login": "cfall",
-        "mdp": "mdp123",
-        "idClasse": 5
-      }
+      { "id": 1, "dateInscription": "2024-01-01", "idUtilisateur": 1, "idAnneeScolaire": 1 },
+      { "id": 2, "dateInscription": "2024-01-01", "idUtilisateur": 2, "idAnneeScolaire": 1 },
+      { "id": 3, "dateInscription": "2023-09-10", "idUtilisateur": 3, "idAnneeScolaire": 2 },
+      { "id": 4, "dateInscription": "2023-09-10", "idUtilisateur": 4, "idAnneeScolaire": 2 },
+      { "id": 5, "dateInscription": "2023-09-10", "idUtilisateur": 5, "idAnneeScolaire": 3 }
     ],
     "cours": [
-      { "id": 1, "dateCours": "2024-01-15", "idClasse": 1, "idSemestre": 1, "idProfesseur": 1, "idModule": 1 },
-      { "id": 2, "dateCours": "2024-01-20", "idClasse": 2, "idSemestre": 2, "idProfesseur": 2, "idModule": 2 },
-      { "id": 3, "dateCours": "2024-02-10", "idClasse": 3, "idSemestre": 3, "idProfesseur": 3, "idModule": 3 },
-      { "id": 4, "dateCours": "2024-02-15", "idClasse": 4, "idSemestre": 4, "idProfesseur": 1, "idModule": 4 },
-      { "id": 5, "dateCours": "2024-03-01", "idClasse": 5, "idSemestre": 4, "idProfesseur": 4, "idModule": 5 }
+      { "id": 1, "dateCours": "2024-01-15", "idClasse": 1, "idSemestre": 1, "idUtilisateur": 4, "idModule": 1 },
+      { "id": 2, "dateCours": "2024-01-20", "idClasse": 2, "idSemestre": 2, "idUtilisateur": 4, "idModule": 2 },
+      { "id": 3, "dateCours": "2024-02-10", "idClasse": 3, "idSemestre": 3, "idUtilisateur": 4, "idModule": 3 },
+      { "id": 4, "dateCours": "2024-02-15", "idClasse": 4, "idSemestre": 4, "idUtilisateur": 4, "idModule": 4 },
+      { "id": 5, "dateCours": "2024-03-01", "idClasse": 5, "idSemestre": 4, "idUtilisateur": 4, "idModule": 5 }
     ],
     "seances": [
       { "id": 1, "date": "2024-01-15", "heureDebut": "08:00", "heureFin": "10:00", "idCours": 1 },
@@ -106,81 +107,11 @@
       { "id": 5, "date": "2024-03-01", "heureDebut": "10:00", "heureFin": "12:00", "idCours": 5 }
     ],
     "absences": [
-      { "id": 1, "dateAbs": "2024-01-15", "idEtudiant": 1, "idSeance": 1 },
-      { "id": 2, "dateAbs": "2024-01-20", "idEtudiant": 2, "idSeance": 2 },
-      { "id": 3, "dateAbs": "2024-02-10", "idEtudiant": 3, "idSeance": 3 },
-      { "id": 4, "dateAbs": "2024-02-15", "idEtudiant": 4, "idSeance": 4 },
-      { "id": 5, "dateAbs": "2024-03-01", "idEtudiant": 5, "idSeance": 5 }
-    ],
-  "roles": [
-    { "id": 1, "libelle": "RP" },
-    { "id": 2, "libelle": "AC" },
-    { "id": 3, "libelle": "Professeur" },
-    { "id": 4, "libelle": "Etudiant" }
-  ],
-  "professeurs": [
-    {
-      "id": "1",
-      "nom": "ba",
-      "prenom": "cheikh",
-      "grade": "maître de conférences",
-      "specialite": "informatique"
-    },
-    {
-      "id": "2",
-      "nom": "faye",
-      "prenom": "aissatou",
-      "grade": "docteur",
-      "specialite": "mathématiques"
-    },
-    {
-      "id": "3",
-      "nom": "diagne",
-      "prenom": "abdoulaye",
-      "grade": "professeur agrégé",
-      "specialite": "physique"
-    },
-    {
-      "id": "4",
-      "nom": "ndour",
-      "prenom": "awa",
-      "grade": "docteur",
-      "specialite": "chimie"
-    }
-  ],
-  "utilisateurs": [
-    {
-      "id": 1,
-      "nom": "Samba",
-      "prenom": "Ndiaye",
-      "login": "sndiaye",
-      "mdp": "mdp123",
-      "idRole": 4
-    },
-    {
-      "id": 2,
-      "nom": "Fatou",
-      "prenom": "Diop",
-      "login": "fdiop",
-      "mdp": "mdp123",
-      "idRole": 4
-    },
-    {
-      "id": 3,
-      "nom": "Awa",
-      "prenom": "Diop",
-      "login": "adiop",
-      "mdp": "mdp123",
-      "idRole": 1
-    },
-    {
-      "id": 4,
-      "nom": "ba",
-      "prenom": "cheikh",
-      "login": "cba",
-      "mdp": "mdp123",
-      "idRole": 3
-    }
-  ]
+      { "id": 1, "dateAbs": "2024-01-15", "idUtilisateur": 1, "idSeance": 1 },
+      { "id": 2, "dateAbs": "2024-01-20", "idUtilisateur": 2, "idSeance": 2 },
+      { "id": 3, "dateAbs": "2024-02-10", "idUtilisateur": 3, "idSeance": 3 },
+      { "id": 4, "dateAbs": "2024-02-15", "idUtilisateur": 4, "idSeance": 4 },
+      { "id": 5, "dateAbs": "2024-03-01", "idUtilisateur": 5, "idSeance": 5 }
+    ]
   }
   
