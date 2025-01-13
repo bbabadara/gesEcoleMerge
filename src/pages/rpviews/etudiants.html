@@ -122,9 +122,91 @@
       </div>
     </nav>
     <div class="p-4 w-full">
-      <div class="p-4  rounded-lg dark:border-gray-700 border border-2">
+      <div class="p-4  rounded-lg dark:border-gray-700">
         <!-- Contenu -->
-        
+        <div class="flex items-center justify-between">
+            <div class="flex items-center border border-2 p-2 bg-indigo-800 text-white text-sm font-medium rounded-lg">
+                <span> Semestre: </span>
+                <select id="" class="flex items-center bg-indigo-800 border-none outline-none ps-2 block w-full  dark:bg-indigo-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white">
+                  <option value="S1"> S1 </option>
+                  <option value="S2"> S2 </option>
+                </select>
+            </div>
+            <p class="font-medium text-xl"> Année scolaire: <span>2024/2025</span> </p>
+        </div>
+        <div class="flex items-center text-xl mt-10">
+            <p class="font-medium"> Liste de mes absences </p>
+        </div>
+        <!-- Champ d'ajout -->
+        <div class="flex items-center mt-5">
+            <div class="relative w-50">
+                <select title="filiere" id="countries" class="border border-indigo-800 text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-transparent dark:border-indigo-800 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    <option selected>Tous</option>
+                    <option value="FR">Développement web et mobile</option>
+                    <option value="DE">Génie Logiciel</option>
+                    <option value="DE">Design Numerique</option>
+                </select>
+            </div>
+            <div class="relative w-40 ms-2">
+                <select title="niveau" id="countries" class="border border-indigo-800 text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-transparent dark:border-indigo-800 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    <option selected>Tous</option>
+                    <option value="FR">Licence1</option>
+                    <option value="DE">Licence2</option>
+                    <option value="DE">Licence3</option>
+                </select>
+            </div>
+            <div class="relative w-60 ms-2">
+                <input type="text" id="Libellé" class="block px-2 pb-2 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
+                <label for="Libellé" class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white dark:bg- px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">Libellé</label>
+            </div>
+            <button type="button" class="text-white bg-indigo-800 hover:bg-indigo-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-3 ms-2 dark:bg-indigo-800 dark:hover:bg-indigo-800 focus:outline-none dark:focus:ring-blue-800">
+                Ajouter
+            </button>
+        </div>
+
+        <div class="relative overflow-x-auto mt-5">
+            <table class="w-full text-sm text-center rtl:text-right text-gray-500 dark:text-gray-400">
+                <thead class="text-xs text-white uppercase bg-indigo-800 dark:bg-indigo-800 dark:text-white">
+                    <tr class="">
+                        <th scope="col" class="px-6 py-3">
+                            Photo
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            Nom
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            Classe
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            Adresse
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            Téléphone
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="bg-white border dark:bg-gray-800 dark:border-gray-700">
+                        <td class="px-6 py-4 flex justify-center">
+                            <img class="w-8 h-8 rounded-full" src="/src/images/student.jpeg" alt="user">
+                        </td>
+                        <td class="px-6 py-4">
+                            Abdou Fall
+                        </td>
+                        <td class="px-6 py-4">
+                            L2 Dev web
+                        </td>
+                        <td class="px-6 py-4">
+                            Dieuppeul
+                        </td>
+                        <td class="px-6 py-4">
+                            772670937
+                        </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
         <!-- Pagination -->
         <div class="flex items-center justify-between mt-5">
             <div>
