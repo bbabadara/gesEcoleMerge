@@ -100,7 +100,6 @@ const generateTbody = (classes) => {
   `).join('');
 };
 
-// Optimisation de la recherche pour les niveaux et filières
 const mergeClassesWithNiveauxAndFilieres = (classes, niveaux, filieres) => {
   // Créer des objets pour une recherche plus rapide
   const niveauxMap = niveaux.reduce((acc, niveau) => {

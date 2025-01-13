@@ -73,6 +73,128 @@
         "idRole": 1
       }
     ],
+  "etudiants": [
+    {
+      "id": "1",
+      "matricule": "etu001",
+      "nomComplet": "Samba Ndiaye",
+      "adresse": "dakar",
+      "login": "sndiaye",
+      "mdp": "mdp123",
+      "idClasse": 1
+    },
+    {
+      "id": "2",
+      "matricule": "etu002",
+      "nomComplet": "Fatou Diop",
+      "adresse": "thiès",
+      "login": "fdiop",
+      "mdp": "mdp123",
+      "idClasse": 2
+    },
+    {
+      "id": "3",
+      "matricule": "etu003",
+      "nomComplet": "Ibrahima Ba",
+      "adresse": "saint-louis",
+      "login": "iba",
+      "mdp": "mdp123",
+      "idClasse": 3
+    },
+    {
+      "id": "4",
+      "matricule": "etu004",
+      "nomComplet": "Mariama Sow",
+      "adresse": "kaolack",
+      "login": "msow",
+      "mdp": "mdp123",
+      "idClasse": 4
+    },
+    {
+      "id": "5",
+      "matricule": "etu005",
+      "nomComplet": "Cheikh Fall",
+      "adresse": "ziguinchor",
+      "login": "cfall",
+      "mdp": "mdp123",
+      "idClasse": 5
+    },
+    {
+      "id": "48a0",
+      "login": "",
+      "pwd": ""
+    },
+    {
+      "id": "182f",
+      "login": "",
+      "pwd": ""
+    },
+    {
+      "id": "c794",
+      "login": "",
+      "pwd": ""
+    },
+    {
+      "id": "36b3",
+      "login": "",
+      "pwd": ""
+    },
+    {
+      "id": "63d7",
+      "login": "",
+      "pwd": ""
+    },
+    {
+      "id": "3e9e",
+      "login": "",
+      "pwd": ""
+    },
+    {
+      "id": "2918",
+      "login": "",
+      "pwd": ""
+    },
+    {
+      "id": "c218",
+      "login": "",
+      "pwd": ""
+    },
+    {
+      "id": "f6f1",
+      "login": "",
+      "pwd": ""
+    },
+    {
+      "id": "951f",
+      "login": "",
+      "pwd": ""
+    },
+    {
+      "id": "cfcf",
+      "login": "sndiaye",
+      "pwd": "mdp123"
+    },
+    {
+      "id": "eac9",
+      "login": "",
+      "pwd": ""
+    },
+    {
+      "id": "e6d4",
+      "login": "sdf",
+      "pwd": "3rer"
+    },
+    {
+      "id": "5d00",
+      "login": "paul.durand@example.com",
+      "pwd": "pa"
+    },
+    {
+      "id": "fee3",
+      "login": "djami@gmail.com",
+      "pwd": "euh8338"
+    }
+  ],
     "anneesScolaires": [
       { "id": 1, "libelle": "2023-2024", "etat": "En cours" },
       { "id": 2, "libelle": "2022-2023", "etat": "Terminée" },
