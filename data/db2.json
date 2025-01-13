@@ -1,4 +1,22 @@
 {
+  "role": [
+    {
+      "id": 1,
+      "libelle": "RP"
+    },
+    {
+      "id": 2,
+      "libelle": "AC"
+    },
+    {
+      "id": 3,
+      "libelle": "Professeur"
+    },
+    {
+      "id": 4,
+      "libelle": "Etudiant"
+    }
+  ],
     "utilisateurs": [
       {
         "id": 1,
@@ -45,6 +63,14 @@
         "grade": "Professeur associé",
         "specialite": "Physique",
         "photo": "professeur2.jpg"
+      },
+      {
+        "id": 5,
+        "nom": "Ba",
+        "prenom": "Bba",
+        "login": "ba",
+        "mdp": "mdp123",
+        "idRole": 1
       }
     ],
     "anneesScolaires": [

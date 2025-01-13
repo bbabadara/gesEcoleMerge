@@ -64,9 +64,9 @@ function redirectToRoleBasedPage(utilisateur) {
     // Vérifier le rôle de l'utilisateur et rediriger en conséquence
     switch (utilisateur.idRole) {
         case 1: // RP
-            window.location.href = "./rpviews/pageRP.html";  
+            window.location.href = "./rpviews/classes.html";  
         case 2: // AC
-            window.location.href = "./acviews/pageAC.html";  
+            window.location.href = "./rpviews/classes.html";  
             break;
         case 3: // Professeur
             window.location.href = "./profviews/coursprofs.html";  
